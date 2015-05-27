@@ -76,7 +76,7 @@ plugins:
 - hexo-generator-feed
 - hexo-generator-sitemap
 ## Themes: http://hexo.io/themes/
-theme: jacman
+theme: my_jacman
 stylus:
     compress: true
 
