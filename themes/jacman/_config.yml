@@ -76,7 +76,10 @@ links:
     伯乐在线: http://blog.jobbole.com/,伯乐在线
     PlanetPython: http://planetpython.org/,PlanetPython
     PyCoder'sWeekly: http://lucumr.pocoo.org/,Pycoder's Weekly
-
+    PythonWeekly: http://www.pythonweekly.com/,PythonWeekly
+    ImportPythonWeekly: http://importpython.com/newsletter/,ImportPythonWeekly
+    FullstackPython: http://www.fullstackpython.com/,FullstackPython
+    PythonZEEF: https://python.zeef.com/alan.richmond,PythonZEEF
 #### Comment
 duoshuo_shortname: cyrusin ## e.g. wuchong   your duoshuo short name.
 disqus_shortname:  ## e.g. wuchong   your disqus short name.
