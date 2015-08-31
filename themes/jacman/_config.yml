@@ -71,9 +71,11 @@ toc:
 
 #### Links
 links:
-  码农圈: https://coderq.com,一个面向程序员交流分享的新一代社区
-
-
+    #码农圈: https://coderq.com,一个面向程序员交流分享的新一代社区
+    开发者头条: http://toutiao.io/,开发者的首选阅读分享平台 
+    伯乐在线: http://blog.jobbole.com/,伯乐在线
+    PlanetPython: http://planetpython.org/,PlanetPython
+    PyCoder'sWeekly: http://lucumr.pocoo.org/,Pycoder's Weekly
 
 #### Comment
 duoshuo_shortname: cyrusin ## e.g. wuchong   your duoshuo short name.
