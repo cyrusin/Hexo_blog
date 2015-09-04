@@ -21,38 +21,38 @@ categories: 技术
 代码如下:
     
     def binary_search_t(L, cur_time, trans_func=json.loads):
-    '''binary_search_t(list, timestamp, function) -> index, transfered_tartget_element
+        '''binary_search_t(list, timestamp, function) -> index, transfered_tartget_element
 
-    use binary search algorithm to find target element in sorted list,
-    each element needs to be transfered to sortable object within 'trans_func'.
-    'L': list contains some elements that sorted by some attribute(e.g. 'begin_time')
-    'cur_time': target value(current timestamp)
-    'trans_func': function used to transfer element to be sortable, default is json.loads
-    e.g. L=["{'begin_time':...,'end_time':...}","{...}"...]
-    '''
-    if not L:
-        return -1, None
-
-    low = 0
-    high = len(L) - 1
-    while low <= high:
-        mid = (low + high) >> 1
-        try:
-            mid_val = trans_func(L[mid])
-            begin_time = mid_val.get('begin_time')
-            end_time = mid_val.get('end_time')
-        except Exception, e:
-            logging.exception(e)
-            #存在非法数据,停止搜索
+        use binary search algorithm to find target element in sorted list,
+        each element needs to be transfered to sortable object within 'trans_func'.
+        'L': list contains some elements that sorted by some attribute(e.g. 'begin_time')
+        'cur_time': target value(current timestamp)
+        'trans_func': function used to transfer element to be sortable, default is json.loads
+        e.g. L=["{'begin_time':...,'end_time':...}","{...}"...]
+        '''
+        if not L:
             return -1, None
 
-        if begin_time <= cur_time:
-            if end_time > cur_time:
-                return mid, mid_val
+        low = 0
+        high = len(L) - 1
+        while low <= high:
+            mid = (low + high) >> 1
+            try:
+                mid_val = trans_func(L[mid])
+                begin_time = mid_val.get('begin_time')
+                end_time = mid_val.get('end_time')
+            except Exception, e:
+                logging.exception(e)
+                #存在非法数据,停止搜索
+                return -1, None
+
+            if begin_time <= cur_time:
+                if end_time > cur_time:
+                    return mid, mid_val
+                else:
+                    low = mid + 1
             else:
-                low = mid + 1
-        else:
-            high = mid - 1
-    return -1, None 
+                high = mid - 1
+        return -1, None 
 
 
