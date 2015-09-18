@@ -29,11 +29,22 @@ Python中,`class`关键字表示定义一个类对象,此时解释器会按一�
             cls._instance = None
         def __call__(cls, *args, **kwargs):
             if cls._instance == None
+                # 以下不要使用'cls._instance = cls(*args, **kwargs)', 防止死循环,
+                # cls的调用行为已经被当前'__call__'协议拦截了
+                # 使用super(Singleton, cls).__call__来生成cls的实例
                 cls._instance = super(Singleton, cls).__call__(*args, **kwargs)
             return cls._instance
 
     class Foo(object): #单例类
         __metaclass__ = Singleton
+    
+    >>>a = Foo()
+    >>>b = Foo()
+    >>>a is b
+    >>>True
+    >>>a.x = 1
+    >>>b.x
+    >>>1
 
 ##使用`__new__`
 `__init__`不是Python对象的构造方法,`__init__`只负责初始化实例对象,在调用`__init__`方法之前,会首先调用`__new__`方法生成对象,可以认为`__new__`方法充当了构造方法的角色。所以可以在`__new__`中加以控制,使得某个类只生成唯一对象。具体实现时可以实现一个父类,重载`__new__`方法,单例类只需要继承这个父类就好。
