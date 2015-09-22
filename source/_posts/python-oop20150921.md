@@ -95,3 +95,4 @@ Python中对象到底是怎么生成的呢?看代码:
 
 以上就是Python创建一个实例对象的过程。
 
+参考: http://www.cafepy.com/article/python_types_and_objects
