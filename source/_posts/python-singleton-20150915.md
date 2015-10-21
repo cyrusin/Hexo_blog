@@ -1,7 +1,7 @@
 title: "在Python中实现单例模式"
 date: 2015-09-15 15:17:58
 tags: [Python, 技术]
-categories: 技术 
+categories: Python 
 ---
 有些时候你的项目中难免需要一些全局唯一的对象,这些对象大多是一些工具性的东西,在Python中实现单例模式并不是什么难事。以下总结几种方法:
 

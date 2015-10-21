@@ -1,7 +1,7 @@
 title: "Python中的元类,类,对象"
 date: 2015-09-21 15:25:28
 tags: [Python, 技术]
-categories: 技术
+categories: Python
 ---
 Python的"类型-对象"体系实现的简洁而优雅,"元类"-"类"-"实例对象"自上而下,层次分明。
 以下是关键的几个点:

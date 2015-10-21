@@ -1,7 +1,7 @@
 title: "PyCon2015"
 date: 2015-09-23 14:28:55
 tags: [Python, 技术]
-categories: 技术
+categories: Python
 ---
 9月19号参加了北京的PyCon2015,有众多互联网公司参加,而且云计算类的公司颇多,足以看出Python在云计算领域的应用之广。
 
