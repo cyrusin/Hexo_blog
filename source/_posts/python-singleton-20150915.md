@@ -16,6 +16,16 @@ categories: Python
             return instances[cls]
         return _wrapper
 
+你会发现`singleton`装饰器内部使用了一个`dict`。当然你也可以用其他的方式,不过以下的实现是**错误**的:
+
+    def singleton(cls):
+        _instance = None #外部作用域的引用对于嵌套的内部作用域是只读的
+        def _wrapper(*args, **kwargs):
+            if _instance is None: #解释器会抛出"UnboundLocalError: ...referenced before assignment"
+                _instance = cls(*args, **kwargs) #赋值行为使解释器将"_instance"看作局部变量
+            return _instance
+        return _wrapper 
+
 ##使用元类(`__metaclass__`)和可调用对象(`__call__`)
 Python的对象系统中一些皆对象,类也不例外,可以称之为"类型对象",比较绕,但仔细思考也不难:类本身也是一种对象,只不过这种对象很特殊,它表示某一种类型。是对象,那必然是实例化来的,那么谁实例化后是这种类型对象呢?也就是元类。
 
@@ -28,7 +38,7 @@ Python中,`class`关键字表示定义一个类对象,此时解释器会按一�
             super(Singleton, cls).__init__(name, bases, attrs)
             cls._instance = None
         def __call__(cls, *args, **kwargs):
-            if cls._instance == None
+            if cls._instance is None
                 # 以下不要使用'cls._instance = cls(*args, **kwargs)', 防止死循环,
                 # cls的调用行为已经被当前'__call__'协议拦截了
                 # 使用super(Singleton, cls).__call__来生成cls的实例
