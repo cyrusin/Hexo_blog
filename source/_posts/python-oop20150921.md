@@ -54,7 +54,8 @@ Python中对象到底是怎么生成的呢?看代码:
     @cls_decorator
     class MyClass(object):
         __metaclass__ = MetaClass
-        def __new__(cls, *args, **kwargs): print "MyClass.__new__, create instance of ", cls
+        def __new__(cls, *args, **kwargs):
+            print "MyClass.__new__, create instance of ", cls
             return super(MyClass, cls).__new__(cls, *args, **kwargs)
 
         def __init__(self, x):
