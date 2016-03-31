@@ -32,7 +32,7 @@ categories: Redis
             p = redis_client.pipeline()
             p.incr(key, 1)
             p.expire(key, COUNTER_INTERVAL_S)
-            status = p.execute()[0]
+            p.execute()
         except Exception, e:
             logging.exception(e)
         return self.write(content)
