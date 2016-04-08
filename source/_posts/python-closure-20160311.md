@@ -1,7 +1,7 @@
 title: "Python闭包的两个注意事项"
 date: 2016-03-11 16:20:30
 tags: [Python, 技术]
-categories: python
+categories: Python
 ---
 
 ##延迟绑定
