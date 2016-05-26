@@ -1,6 +1,8 @@
 #个人简介
-**[优酷](www.youku.com)**搬砖工
-
+姓名：**Tinker达文希**，职业：**[优酷](www.youku.com)**搬砖工
+[微博](http://weibo.com/xiaolee123)
+[知乎](http://www.zhihu.com/people/cyrusin)
+[豆瓣](https://www.douban.com/people/mixlee)
 #技术日常
 Python, C, Lua, Nginx, Tornado, Redis, Memcached, MongoDB, MySQL, Golang, zsh
 
