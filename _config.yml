@@ -72,9 +72,10 @@ feed:
 
 # Extensions
 ## Plugins: http://hexo.io/plugins/
+# 从hexo 3.2.2开始不需要设置这个plugins节点,否则会报错
 plugins:
-- hexo-generator-feed
-- hexo-generator-sitemap
+    #- hexo-generator-feed 
+    #- hexo-generator-sitemap
 ## Themes: http://hexo.io/themes/
 theme: jacman
 stylus:
